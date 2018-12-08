@@ -47,10 +47,11 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 标题部分
-\title{\textmd{\bf Artificial Intelligence Final Project --- Proposal}}
+\title{\textmd{\bf Artificial Intelligence Project Proposal}\\
+Hierarchical Reinforcement Learning for Sparse Rewards
+}
 \date{}
-\author{Lin Yiheng,~Jiang Zhihao}
-\author{123}
+\author{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
@@ -61,7 +62,13 @@
 % Begin edit from here
 
 
-\section{}
+\section{Problem}
+
+\section{Existing Works}
+
+\section{Limitation}
+
+\section{Goal}
 
 
 
