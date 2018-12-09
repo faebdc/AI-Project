@@ -1,0 +1,56 @@
+\begin{thebibliography}{5}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Kulkarni et~al.(2016)Kulkarni, Narasimhan, Saeedi, and
+  Tenenbaum]{AI-16}
+Tejas~D. Kulkarni, Karthik Narasimhan, Ardavan Saeedi, and Josh Tenenbaum.
+\newblock Hierarchical deep reinforcement learning: Integrating temporal
+  abstraction and intrinsic motivation.
+\newblock In \emph{Advances in Neural Information Processing Systems 29: Annual
+  Conference on Neural Information Processing Systems 2016, December 5-10,
+  2016, Barcelona, Spain}, pages 3675--3683, 2016.
+\newblock URL
+  \url{http://papers.nips.cc/paper/6233-hierarchical-deep-reinforcement-learning-integrating-temporal-abstraction-and-intrinsic-motivation}.
+
+\bibitem[Mnih et~al.(2013)Mnih, Kavukcuoglu, Silver, Graves, Antonoglou,
+  Wierstra, and Riedmiller]{AI-13}
+Volodymyr Mnih, Koray Kavukcuoglu, David Silver, Alex Graves, Ioannis
+  Antonoglou, Daan Wierstra, and Martin~A. Riedmiller.
+\newblock Playing atari with deep reinforcement learning.
+\newblock \emph{CoRR}, abs/1312.5602, 2013.
+\newblock URL \url{http://arxiv.org/abs/1312.5602}.
+
+\bibitem[Mnih et~al.(2015)Mnih, Kavukcuoglu, Silver, Rusu, Veness, Bellemare,
+  Graves, Riedmiller, Fidjeland, Ostrovski, Petersen, Beattie, Sadik,
+  Antonoglou, King, Kumaran, Wierstra, Legg, and Hassabis]{AI-15}
+Volodymyr Mnih, Koray Kavukcuoglu, David Silver, Andrei~A. Rusu, Joel Veness,
+  Marc~G. Bellemare, Alex Graves, Martin~A. Riedmiller, Andreas Fidjeland,
+  Georg Ostrovski, Stig Petersen, Charles Beattie, Amir Sadik, Ioannis
+  Antonoglou, Helen King, Dharshan Kumaran, Daan Wierstra, Shane Legg, and
+  Demis Hassabis.
+\newblock Human-level control through deep reinforcement learning.
+\newblock \emph{Nature}, 518\penalty0 (7540):\penalty0 529--533, 2015.
+\newblock \doi{10.1038/nature14236}.
+\newblock URL \url{https://doi.org/10.1038/nature14236}.
+
+\bibitem[Nachum et~al.(2018)Nachum, Gu, Lee, and Levine]{AI-18}
+Ofir Nachum, Shixiang Gu, Honglak Lee, and Sergey Levine.
+\newblock Data-efficient hierarchical reinforcement learning.
+\newblock \emph{CoRR}, abs/1805.08296, 2018.
+\newblock URL \url{http://arxiv.org/abs/1805.08296}.
+
+\bibitem[Vezhnevets et~al.(2017)Vezhnevets, Osindero, Schaul, Heess, Jaderberg,
+  Silver, and Kavukcuoglu]{AI-17}
+Alexander~Sasha Vezhnevets, Simon Osindero, Tom Schaul, Nicolas Heess, Max
+  Jaderberg, David Silver, and Koray Kavukcuoglu.
+\newblock Feudal networks for hierarchical reinforcement learning.
+\newblock In \emph{Proceedings of the 34th International Conference on Machine
+  Learning, {ICML} 2017, Sydney, NSW, Australia, 6-11 August 2017}, pages
+  3540--3549, 2017.
+\newblock URL \url{http://proceedings.mlr.press/v70/vezhnevets17a.html}.
+
+\end{thebibliography}

@@ -1,5 +1,10 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: proposal.aux
-I found no \citation commands---while reading file proposal.aux
-I found no \bibdata command---while reading file proposal.aux
-I found no \bibstyle command---while reading file proposal.aux
-(There were 3 error messages)
+The style file: plainnat.bst
+Database file #1: refx.bib
+A bad cross reference---entry "AI-16"
+refers to entry "DBLP:conf/nips/2016", which doesn't exist
+A bad cross reference---entry "AI-17"
+refers to entry "DBLP:conf/icml/2017", which doesn't exist
+Warning--I didn't find a database entry for "DBLP:conf/nips/2016"
+Warning--I didn't find a database entry for "DBLP:conf/icml/2017"
+(There were 2 error messages)
