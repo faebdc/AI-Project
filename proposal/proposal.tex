@@ -19,7 +19,7 @@
 \usepackage{algpseudocode}
 \usepackage{url}
 
-\usepackage{natbib}
+%\usepackage{natbib}
 
 \usepackage[colorlinks, citecolor=blue]{hyperref}
 
@@ -59,7 +59,7 @@
 Hierarchical Reinforcement Learning for Sparse Rewards
 }
 \date{}
-\author{}
+\author{Zhihao Jiang (2016011273), Yiheng Lin (2016012392)}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
@@ -74,34 +74,38 @@ Hierarchical Reinforcement Learning for Sparse Rewards
 
 Sparse reward is a fundamental challenging problem for RL. Hierarchical exploration approaches learns to select subgoals and how to achieve subgoals, which seems helpful for reinforcement learning with sparse rewards. There are several papers show that hierarchical exploration allows more quickly to explore regions far away than basic $\epsilon$-greedy exploration.
 
-Some problems are remained. For example, why hierarchical exploration performs better than $\epsilon$-greedy exploration? Is there any other exploration method performing better?
+Some problems are remained. For example, why hierarchical exploration performs better than $\epsilon$-greedy exploration? Under what conditions can we guarantee their privileges in performance? Is there any other exploration method performing better?
 
 \section{Existing Works}
 
-\cite{AI-16}
+In lecture, we studied DRL\cite{AI-13,AI-15}. It performs not good in the environments with sparse feedbacks, such as Montezuma¡¯s revenge.
 
-\cite{AI-17}
+(Kulkarni et al.)\cite{AI-16} proposed a two layer hierarchical framework for reinforcement learning in the environments where the feedbacks are sparse. The higher hierarchy (Meta Controller) is responsible for defining goals for the lower hierarchy (Controller). The lower hierarchy try to realize the goals use RL algorithms. The paper also uses deep learning methods (convolution) to train the controllers to realize their goals.
 
-\cite{AI-18}
+(Vezhnevets et al.)\cite{AI-17} generalized fedual reinforcement learning framework so that it can be used under more settings. He also proposed a new method (transition policy gradient) to train the Manager model. The manager model (higher hierarchy) use extrinsic rewards as input to generate intrinsic rewards for worker model (lower hierarchy). And dilated LSTM is used when training Manager Model since long term memory is preferred for the Manager Model.
 
-Something may be not so related:
+(Nachum et al.)\cite{AI-18} pointed out that the prior works depended too much on specific settings. For example, in \cite{AI-16}, we need to build a custom object detector that provides plausible object candidates manually. So they aim to provide a more general model that can fit in more complex settings. In contrast to previous works that needs to set the goal based on the model, the authors use states as goals directly, such that the lower hierarchy can be trained faster and the model can fit in different settings more easily. The author also establishes the concept of off-policy.
 
-\cite{AI-15}
-
-\cite{AI-13}
 
 \section{Limitation}
 
-\section{Goal}
+The main limitation of these works on HRL are they lack theoretical analysis on why the proposed framework works better than $\epsilon-$greedy RL. They provide a lot of settings under which their HRL methods can outperform other models. But the question they still need to answer is under what specific conditions can we gaurantee that HRL is better than traditional $\epsilon-$greedy RL.
+
+\section{Objectives}
 
 We hope to achieve one or more goals below.
 
 \begin{itemize}
-\item Design a hierarchical exploration algorithm which performs good under specific environment.
+\item Reimplement or design a hierarchical exploration algorithm which performs good under specific environment.
 \item Improve hierarchical exploration algorithm mentions in papers.
-\item Explain why hierarchical exploration performs better than $\epsilon$-greedy exploration.
-\item Design a learning algorithm in environments with sparse feedbacks, which performs better than hierarchical exploration.
+\item Explain why hierarchical exploration performs better than $\epsilon$-greedy exploration under some conditions.
+\item Design a learning algorithm in environments with sparse feedbacks, which performs better than previous works of hierarchical exploration.
 \end{itemize}
+
+\section{Approach}
+
+We will try to reimplement the result of the papers to test the stability and advantage of proposed frameworks under some specific settings. Then we will try to figure out the shared features of settings under which HRL can outperform $\epsilon-$greedy RL and make theoretical proofs. After that, we will use experiments to test the conclusions we get.
+
 
 
 \bibliographystyle{plain}

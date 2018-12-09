@@ -13,7 +13,15 @@
 \usepackage{ifpdf}
 %\usepackage{CJKspace}
 \usepackage{verbatim}
-\usepackage{ctex}
+%\usepackage{ctex}
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+\usepackage{url}
+
+\usepackage{natbib}
+
+\usepackage[colorlinks, citecolor=blue]{hyperref}
 
 
 % In case you need to adjust margins:
@@ -70,11 +78,11 @@ Some problems are remained. For example, why hierarchical exploration performs b
 
 \section{Existing Works}
 
-\cite{AI-16}
+( \citeauthor{AI-16}, \citeyear{AI-16} )\cite{AI-16} proposed a 2 layer hierarchical framework for reinforment learning in the environments where the feedbacks are sparce. The higher hierarchy (Meta Controller) is responsible for defining goals for the lower hierarchy (Controller). The lower hierarchy try to realize the goals use RL algorithms. The paper also uses deep learning methods (convolution) to train the controllers to realize their goals.
 
-\cite{AI-17}
+\cite{AI-17} generalized fedual reinforcement learning framework so that it can be used under more settings. He also proposed a new method (transition policy gradient) to train the Manager model. The manager model (higher hierarchy) use extrinsic rewards as input to generate intrinsic rewards for worker model (lower hierarchy). And dilated LSTM is used when training Manager Model since long term memory is prefered for the Manager Model.
 
-\cite{AI-18}
+\cite{AI-18} pointed out that the prior works depended too much on specific settings. For example, in \cite{AI-16}, we need to build a custom object detector that provides plausible object candidates manually. So they aim to provide a more general model that can fit in more complex settings. In contrast to previous works that needs to set the goal based on the model, the authors use states as goals directly, such that the lower hierarchy can be trained faster and the model can fit in different settings more easily. The author also establishes the concept of off-policy.
 
 Something may be not so related:
 
@@ -83,6 +91,8 @@ Something may be not so related:
 \cite{AI-13}
 
 \section{Limitation}
+
+The main limitation of these works on HRL are they lack theoretical analysis on why the proposed framework works better than $\epsilon-$greedy RL. They provide a lot of settings under which their HRL methods can outperform other models. But the question they still need to answer is under what specific conditions can we gaurantee that HRL is better than traditional $\epsilon-$greedy RL.
 
 \section{Goal}
 
@@ -96,7 +106,7 @@ We hope to achieve one or more goals below.
 \end{itemize}
 
 
-\bibliographystyle{plainnat}
+\bibliographystyle{plain}
 \bibliography{refx}
 
 % End edit to here

@@ -13,7 +13,15 @@
 \usepackage{ifpdf}
 %\usepackage{CJKspace}
 \usepackage{verbatim}
-\usepackage{ctex}
+%\usepackage{ctex}
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+\usepackage{url}
+
+\usepackage{natbib}
+
+\usepackage[colorlinks, citecolor=blue]{hyperref}
 
 
 % In case you need to adjust margins:
@@ -64,19 +72,40 @@ Hierarchical Reinforcement Learning for Sparse Rewards
 
 \section{Problem}
 
-Sparse reward is a fundamental challenging problem for RL. 
+Sparse reward is a fundamental challenging problem for RL. Hierarchical exploration approaches learns to select subgoals and how to achieve subgoals, which seems helpful for reinforcement learning with sparse rewards. There are several papers show that hierarchical exploration allows more quickly to explore regions far away than basic $\epsilon$-greedy exploration.
+
+Some problems are remained. For example, why hierarchical exploration performs better than $\epsilon$-greedy exploration? Is there any other exploration method performing better?
 
 \section{Existing Works}
+
+\cite{AI-16}
+This paper proposed
+\cite{AI-17}
+
+\cite{AI-18}
+
+Something may be not so related:
+
+\cite{AI-15}
+
+\cite{AI-13}
 
 \section{Limitation}
 
 \section{Goal}
 
+We hope to achieve one or more goals below.
+
+\begin{itemize}
+\item Design a hierarchical exploration algorithm which performs good under specific environment.
+\item Improve hierarchical exploration algorithm mentions in papers.
+\item Explain why hierarchical exploration performs better than $\epsilon$-greedy exploration.
+\item Design a learning algorithm in environments with sparse feedbacks, which performs better than hierarchical exploration.
+\end{itemize}
 
 
-\Reference{
-
-}
+\bibliographystyle{plain}
+\bibliography{refx}
 
 % End edit to here
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
