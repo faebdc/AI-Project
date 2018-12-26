@@ -10,7 +10,7 @@ const int M = 10000;
 const int Type_num = 3;
 const int act_num = 2;
 
-double alpha=1e-4,gamma=0.9,eps=0.1;
+double alpha=1e-4,Gamma=0.9,eps=0.1;
 
 int Type = 1;
 bool reach_N;
@@ -121,7 +121,7 @@ int getAction(int state)
 		else
 			action=getOptQA(state);
 	}
-	QValue[state][action]+=alpha*(getQReward(state,act_num)+gamma*QValue[getNextState(state,action)][getOptQA(getNextState(state,action))]-QValue[state][action]);
+	QValue[state][action]+=alpha*(getQReward(state,act_num)+Gamma*QValue[getNextState(state,action)][getOptQA(getNextState(state,action))]-QValue[state][action]);
 	return action;
 }
 
@@ -149,6 +149,7 @@ void SetQReward(int state)
 			}
 		}
 		while(subgoal==state)
+			//subgoal=rs(N);
 			subgoal=rs(act_num);
 		for(i=1;i<=N;i++)
 		{
