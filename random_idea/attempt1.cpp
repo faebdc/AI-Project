@@ -149,8 +149,8 @@ void SetQReward(int state)
 			}
 		}
 		while(subgoal==state)
-			//subgoal=rs(N);
-			subgoal=rs(act_num);
+			subgoal=rs(N);
+			//subgoal=rs(act_num);
 		for(i=1;i<=N;i++)
 		{
 			for(j=1;j<=act_num;j++)
