@@ -3,6 +3,7 @@
 #include<ctime>
 #include<cstring>
 #include<iostream>
+#include<cmath>
 using namespace std;
 const int N = 100;
 const int M = 10000;
@@ -156,8 +157,8 @@ void SetQReward(int state)
 				int k;
 				for(k=1;k<=10;k++)
 				{
-					if(getNextState(i,j, true)==subgoal)
-						qReward[i][j]+=0.1*1000;
+					double now=fabs(getNextState(i,j, true)-subgoal);
+					qReward[i][j]-=0.1*now;
 				}
 			}
 		}
@@ -185,8 +186,8 @@ void SetQReward(int state)
 				int k;
 				for(k=1;k<=10;k++)
 				{
-					if(getNextState(i,j, true)==subgoal)
-						qReward[i][j]+=0.1*1000;
+					double now=fabs(getNextState(i,j, true)-subgoal);
+					qReward[i][j]-=0.1*now;
 				}
 			}
 		}
@@ -209,11 +210,12 @@ int main()
 			int action=getAction(state);
 			reward+=getReward(state,action);
 			state=getNextState(state,action);
-			std::cout<<state<<" "<<action<<" "<<reward<<"\n";
+			if(i%100==0)
+				std::cout<<state<<" "<<action<<" "<<reward<<"\n";
 			if(reach_N == true)
 			{
 				char c;
-				std::cin>>c;
+				//std::cin>>c;
 			}
 		}
 		printf("Type==%d\nScore==%g\n\n",Type,reward/M);
