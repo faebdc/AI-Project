@@ -5,7 +5,7 @@
 #include<iostream>
 #include<cmath>
 using namespace std;
-const int N = 100;
+const int N = 1000;
 const int M = 10000;
 const int Type_num = 3;
 const int act_num = 2;
@@ -17,6 +17,8 @@ bool reach_N;
 
 double QValue[N+1][N+1];
 double qReward[N+1][N+1];
+
+int subgoal;
 
 int rs(int x)
 {
@@ -37,6 +39,8 @@ void Init()
 {
 	reach_N=0;
 	memset(QValue,0,sizeof QValue);
+	memset(qReward,0,sizeof qReward);
+	subgoal=1;
 }
 
 double getReward(int state,int action)
@@ -127,7 +131,6 @@ int getAction(int state)
 
 void SetQReward(int state)
 {
-	static int subgoal=1;
 	int i,j;
 	if(Type==1)
 	{
@@ -149,8 +152,8 @@ void SetQReward(int state)
 			}
 		}
 		while(subgoal==state)
-			subgoal=rs(N);
-			//subgoal=rs(act_num);
+			//subgoal=rs(N);
+			subgoal=rs(act_num);
 		for(i=1;i<=N;i++)
 		{
 			for(j=1;j<=act_num;j++)
