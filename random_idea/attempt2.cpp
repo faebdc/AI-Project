@@ -15,7 +15,7 @@ double alpha=1e-4,Gamma=0.9,eps=0.1;
 int Type = 1;
 bool reach_N;
 
-double QValue[N+1][N+1];
+double QValue[N+1][N+1][N+1];
 double qReward[N+1][N+1];
 
 int subgoal;
@@ -99,16 +99,16 @@ int getNextState(int state,int action, bool in_set_up = false)
 	return nstate;
 }
 
-int getOptQA(int state)
+int getOptQA(int state, int subgoal)
 {
 	double val=-1e10;
 	int i;
 	int act=0;
 	for(i=1;i<=act_num;i++)
 	{
-		if(QValue[state][i]>val)
+		if(QValue[state][i][subgoal]>val)
 		{
-			val=QValue[state][i];
+			val=QValue[state][i][subgoal];
 			act=i;
 		}
 	}
@@ -121,7 +121,7 @@ double getQReward(int state,int action)
 	return qReward[state][action];
 }
 
-int getAction(int state)
+int getAction(int state, int subgoal)
 {
 	int action;
 	//if(Type==1)//eps-greedy
@@ -129,10 +129,10 @@ int getAction(int state)
 		if(rs(10000)<=10000*eps)
 			action=rs(act_num);
 		else
-			action=getOptQA(state);
+			action=getOptQA(state, subgoal);
 	}
 	int nxtstate=getNextState(state,action);
-	QValue[state][action]+=alpha*(getQReward(state,action)+Gamma*QValue[nxtstate][getOptQA(nxtstate)]-QValue[state][action]);
+	QValue[state][action][subgoal]+=alpha*(getQReward(state,action)+Gamma*QValue[nxtstate][getOptQA(nxtstate, subgoal)][subgoal]-QValue[state][action][subgoal]);
 	return action;
 }
 
@@ -217,7 +217,7 @@ int main()
 		Init();
 		int count[N+1];
 		cout<<"Type:"<<Type<<"\n";
-		for(int t = 0; t < 100; t++)
+		for(int t = 0; t < 50; t++)
 		{
 			memset(count, 0,sizeof(count));
 			eps=(99-t)*0.003;
@@ -231,8 +231,13 @@ int main()
 				double reward=0;
 				for(i=1;i<=M;i++)
 				{
+					for (int x=1;x<=N;x++)
+					{
+						for(int y=1;y<=act_num;y++)
+							QValue[x][y][x]=1e5;
+					}
 					SetQReward(state);
-					int action=getAction(state);
+					int action=getAction(state, subgoal);
 					//action=2;
 					reward+=getReward(state,action);
 					state=getNextState(state,action);
@@ -251,6 +256,7 @@ int main()
 			{
 				cout<<count[k]<<" ";
 			}
+			cout<<QValue[5][1][6]<<" "<<QValue[5][0][6]<<endl;
 			cout<<"\n";
 		}
 		//printf("Type==%d\nScore==%g\n\n",Type,reward/M);
