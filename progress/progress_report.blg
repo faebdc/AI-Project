@@ -1,51 +1,8 @@
-This is BibTeX, Version 0.99d (TeX Live 2018)
-Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
-The top-level auxiliary file: progress_report.aux
+This is BibTeX, Version 0.99dThe top-level auxiliary file: progress_report.aux
 The style file: plain.bst
 Database file #1: refx.bib
 A bad cross reference---entry "AI-16"
 refers to entry "DBLP:conf/nips/2016", which doesn't exist
 Warning--I didn't find a database entry for "DBLP:conf/nips/2016"
 Warning--to sort, need author or key in github
-You've used 3 entries,
-            2118 wiz_defined-function locations,
-            519 strings with 5058 characters,
-and the built_in function-call counts, 1599 in all, are:
-= -- 142
-> -- 122
-< -- 1
-+ -- 49
-- -- 46
-* -- 137
-:= -- 261
-add.period$ -- 9
-call.type$ -- 3
-change.case$ -- 32
-chr.to.int$ -- 0
-cite$ -- 4
-duplicate$ -- 43
-empty$ -- 95
-format.name$ -- 46
-if$ -- 322
-int.to.chr$ -- 0
-int.to.str$ -- 3
-missing$ -- 2
-newline$ -- 18
-num.names$ -- 4
-pop$ -- 40
-preamble$ -- 1
-purify$ -- 29
-quote$ -- 0
-skip$ -- 35
-stack$ -- 0
-substring$ -- 80
-swap$ -- 15
-text.length$ -- 1
-text.prefix$ -- 0
-top$ -- 0
-type$ -- 12
-warning$ -- 1
-while$ -- 9
-width$ -- 4
-write$ -- 33
 (There was 1 error message)
