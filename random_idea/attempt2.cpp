@@ -132,6 +132,16 @@ int getAction(int state, int subgoal)
 			action=getOptQA(state, subgoal);
 	}
 	int nxtstate=getNextState(state,action);
+	for(int i=1;i<=N;i++)
+	{
+		for(int j=1;j<=act_num;j++)
+		{
+			QValue[i][j][i]=0;
+			for(int k=1;k<=10;k++)
+				QValue[i][j][i]+=0.1*getQReward(i,j);
+			QValue[i][j][i]/=(1-Gamma);
+		}
+	}
 	QValue[state][action][subgoal]+=alpha*(getQReward(state,action)+Gamma*QValue[nxtstate][getOptQA(nxtstate, subgoal)][subgoal]-QValue[state][action][subgoal]);
 	return action;
 }
@@ -231,11 +241,6 @@ int main()
 				double reward=0;
 				for(i=1;i<=M;i++)
 				{
-					for (int x=1;x<=N;x++)
-					{
-						for(int y=1;y<=act_num;y++)
-							QValue[x][y][x]=1e5;
-					}
 					SetQReward(state);
 					int action=getAction(state, subgoal);
 					//action=2;
@@ -256,7 +261,7 @@ int main()
 			{
 				cout<<count[k]<<" ";
 			}
-			cout<<QValue[5][1][6]<<" "<<QValue[5][0][6]<<endl;
+			//cout<<QValue[5][1][6]<<" "<<QValue[5][0][6]<<endl;
 			cout<<"\n";
 		}
 		//printf("Type==%d\nScore==%g\n\n",Type,reward/M);
