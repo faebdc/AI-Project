@@ -1,0 +1,79 @@
+% Modified based on Xiaoming Sun's template
+
+\documentclass{article}
+    \usepackage{amsmath,amsfonts,amsthm,amssymb}
+    \usepackage{setspace}
+    \usepackage{fancyhdr}
+    \usepackage{lastpage}
+    \usepackage{extramarks}
+    \usepackage{chngpage}
+    \usepackage{soul,color}
+    \usepackage{graphicx,float,wrapfig}
+    \usepackage{ifpdf}
+    \usepackage{geometry}
+
+\geometry{a4paper,scale=0.8}
+
+    \ifpdf
+      \usepackage[pdftex,bookmarks,bookmarksopen,bookmarksdepth=3]{hyperref}
+    \else
+      \usepackage[pagebackref]{hyperref}
+    \fi
+
+    % In case you need to adjust margins:
+    % \topmargin=-0.45in      %
+    % \evensidemargin=0in     %
+    % \oddsidemargin=0in      %
+    % \textwidth=6.5in        %
+    % \textheight=9.0in       %
+    % \headsep=0.25in         %
+
+    % Setup the header and footer
+    % \pagestyle{fancy}                                                       %
+    % \chead{\Title}  %
+    % \rhead{\firstxmark}                                                     %
+    % \lfoot{\lastxmark}                                                      %
+    % \cfoot{}                                                                %
+    % \rfoot{Page\ \thepage\ of\ \protect\pageref{LastPage}}                          %
+    % \renewcommand\headrulewidth{0.4pt}                                      %
+    % \renewcommand\footrulewidth{0.4pt}                                      %
+
+    % �����Զ���һЩ����
+    \newcommand{\Answer}{\ \\\textbf{Answer:} }
+    \newcommand{\Acknowledgement}[1]{\ \\{\bf Acknowledgement:} #1}
+    \newtheorem{theorem}{Theorem}
+
+    \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % ���ⲿ��
+    \title{\textmd{\bf Progress Part 1}}
+    \date{}
+    \author{Yiheng Lin, Zhihao Jiang}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \begin{document}
+    \begin{spacing}{1.1}
+    \maketitle %\thispagestyle{empty}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Begin edit from here
+    \section*{Introduction}
+    It is widely accepted that h-DQN (Hierarchy Deep Q-Learning) is developed to tackle the efficiency problem of $\epsilon -$greedy Q-Learning when the reward is sparce. However, after we study the problem setting and reimplement the method proposed in (ref 1), we find another big advantage of h-DQN over traditional Q-Learning and DQN (Deep Q-Learning) (ref 2) is that 
+    \subsection*{Problem Setting}
+    
+    
+    \Acknowledgement{}
+
+    % End edit to here
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \end{spacing}
+    \end{document}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
