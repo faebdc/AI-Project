@@ -9,6 +9,7 @@ const int N = 6;
 const int M = 10000;
 const int Type_num = 3;
 const int act_num = 2;
+const int epis = 100; 
 
 double alpha=1e-4,Gamma=0.9,eps=0.1;
 
@@ -227,11 +228,11 @@ int main()
 		Init();
 		int count[N+1];
 		cout<<"Type:"<<Type<<"\n";
-		for(int t = 0; t < 50; t++)
+		for(int t = 0; t < (epis*5/5); t++)
 		{
 			memset(count, 0,sizeof(count));
-			eps=(99-t)*0.003;
-			for(int k = 0; k < 100000; k++)
+			eps=(epis-1-t)*0.003;
+			for(int k = 0; k < 10000; k++)
 			{
 				bool vis[N+1];
 				memset(vis,0,sizeof vis);
@@ -257,13 +258,16 @@ int main()
 					}
 				}
 			}
-			for(int k = 1; k < N+1; k++)
+			//printf("epis %d --- ",t);
+			//for(int k = 1; k < N+1; k++)
 			{
-				cout<<count[k]<<" ";
+				//cout<<count[k]<<" ";
+				printf("%.5f,",0.01+((double)count[N])/10000);
 			}
 			//cout<<QValue[5][1][6]<<" "<<QValue[5][0][6]<<endl;
-			cout<<"\n";
+			//cout<<"\n";
 		}
+		cout<<"\n";
 		//printf("Type==%d\nScore==%g\n\n",Type,reward/M);
 	}
 }
