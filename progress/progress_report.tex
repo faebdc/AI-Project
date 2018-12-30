@@ -85,6 +85,8 @@
     However, if the hidden state is given to tell the agent whether it has reached state 6, (for example, 0 represents it has not visited state 6, 1 represents it has visited state 6) then the problem is converted to a MDP of 12 states. Then at state i, the agent can separately learn $Q((i, 0), 2) > Q((i, 0), 1)$ and $Q((i, 1), 2) < Q((i, 1), 1)$. We think this will make the problem much easier for traditional Q-Learning. We will do more experiments to verify this claim. The subgoal in \cite{AI-16} operates similarly, the meta-controller should first set the subgoal to state 6 and then set the subgoal to state 1 after state 6 is visited.
 
     In the real world, it is very common that the final outcome of a game actually depends on some hidden state that the agent can not observe. So this problem, although not very complicated, can provide important insight to solve real problems with hidden states. h-DQN algorithm provides an potentially efficient way to let the agent, which combines controller and meta-controller, learn about the important hidden states.
+
+    Another important function of subgoals are encouraging exploration. Notice that in our problem's MDP setting, random actions can hardly reach state 6. By setting a remote state as subgoal, the agent is pushed to explore that state rather than try aimlessly and give up.
     \subsection{H-DQN Algorithm}
     We carefully studied algorithm 1 proposed by \cite{AI-16} (please find the pseudocode in appendix 1) and reimplement this algorithm on the game setting described in the last section based on \cite{github}. We can see salient improvement compared with traditional Q-Learning method, although the performance is worse than the authors of \cite{AI-16} claimed. After supervising the training process, we think there are some potential improvements we can do to judge the effectiveness of h-DQN algorithm.
 
@@ -166,7 +168,7 @@
     \bibliographystyle{plain}
     \bibliography{refx}
 
-    \Acknowledgement{}
+    %\Acknowledgement{}
 
     % End edit to here
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
