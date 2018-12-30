@@ -1,0 +1,27 @@
+\begin{thebibliography}{1}
+
+\bibitem{github}
+h-dqn.
+\newblock \url{https://github.com/EthanMacdonald/h-DQN}.
+\newblock Reproduction of "Hierarchical Deep Reinforcement Learning:
+  Integrating Temporal Abstraction and Intrinsic Motivation" by Kulkarni et al.
+  (2016) in Python.
+
+\bibitem{AI-16}
+Tejas~D. Kulkarni, Karthik Narasimhan, Ardavan Saeedi, and Josh Tenenbaum.
+\newblock Hierarchical deep reinforcement learning: Integrating temporal
+  abstraction and intrinsic motivation.
+\newblock In {\em Advances in Neural Information Processing Systems 29: Annual
+  Conference on Neural Information Processing Systems 2016, December 5-10,
+  2016, Barcelona, Spain}, pages 3675--3683, 2016.
+
+\bibitem{AI-15}
+Volodymyr Mnih, Koray Kavukcuoglu, David Silver, Andrei~A. Rusu, Joel Veness,
+  Marc~G. Bellemare, Alex Graves, Martin~A. Riedmiller, Andreas Fidjeland,
+  Georg Ostrovski, Stig Petersen, Charles Beattie, Amir Sadik, Ioannis
+  Antonoglou, Helen King, Dharshan Kumaran, Daan Wierstra, Shane Legg, and
+  Demis Hassabis.
+\newblock Human-level control through deep reinforcement learning.
+\newblock {\em Nature}, 518(7540):529--533, 2015.
+
+\end{thebibliography}
