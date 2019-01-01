@@ -11,7 +11,7 @@ const int Type_num = 3;
 const int act_num = 2;
 const int epis = 100; 
 
-double alpha=1e-4,Gamma=0.9,eps=0.1;
+double alpha=1e-1,Gamma=0.9,eps=0.1;
 
 int Type = 1;
 bool reach_N;
@@ -232,7 +232,7 @@ int main()
 		{
 			memset(count, 0,sizeof(count));
 			eps=(epis-1-t)*0.003;
-			for(int k = 0; k < 10000; k++)
+			for(int k = 0; k < 1000; k++)
 			{
 				bool vis[N+1];
 				memset(vis,0,sizeof vis);
