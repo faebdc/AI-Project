@@ -19,7 +19,7 @@ const int num_kind=(1<<num_key);//"kind" denotes whether each key is gathered
 const double err=0.2;//the error each step
 const double dis_gather=1.0;//the max distance to gather items
 const double eps=1e-6;
-const double learning_rate=1e-2;
+const double learning_rate=1e-3;
 struct Point
 {
 	double x,y;
@@ -130,8 +130,8 @@ class Game
 			}
 			dest.x=0;
 			dest.y=0;
-			keys[0].x=5;
-			keys[0].y=5;
+			keys[0].x=15;
+			keys[0].y=15;
 		}
 		bool Action(int dir)
 		{
@@ -179,8 +179,8 @@ class Agent
 		void makeNewSubgoal(Game &g)
 		{
 			Point np;
-			np.x=5;
-			np.y=5;
+			np.x=15;
+			np.y=15;
 			if(Dis(subgoal,np)<1)
 			{
 				subgoal.x=0;
@@ -300,7 +300,7 @@ class Agent
 			printf("-----------\n\n");
 		}
 };
-const int Times = 100000;
+const int Times = 1000;
 double scs[Times];
 int main()
 {
@@ -331,7 +331,7 @@ int main()
 					printf("TIME = %d-------------------------\n\n\n",i);
 					a.Print(g);
 					printf("\n\n\n\n\n\n");
-					Sleep(1000);
+					//Sleep(1000);
 				}
 				cc=0;
 			}
