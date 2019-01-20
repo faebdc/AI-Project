@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2016.10.25)  20 JAN 2019 21:20
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2016.10.25)  20 JAN 2019 21:28
 entering extended mode
 **D:/ai/AI-Project/Final_Report/progress_report.tex
 (D:/ai/AI-Project/Final_Report/progress_report.tex
@@ -438,9 +438,6 @@ T1/cmr/m/n/10 3(\OML/cmm/m/it/10 right\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 g$\OT1/
 cmr/m/n/10 .
  []
 
-
-LaTeX Warning: Citation `lecture' on page 6 undefined on input line 161.
-
 [6 <D:/ai/AI-Project/Final_Report/1.png>]
 (D:\ai\AI-Project\Final_Report\progress_report.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 4--7
@@ -458,15 +455,11 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 184.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 184.
 Package rerunfilecheck Info: File `progress_report.out' has not changed.
 (rerunfilecheck)             Checksum: 46ED05AC01B80B765F4FE886C3512D60;689.
-
-
-LaTeX Warning: There were undefined references.
-
  ) 
 Here is how much of TeX's memory you used:
- 6942 strings out of 495354
- 98271 string characters out of 3183074
- 188136 words of memory out of 3000000
+ 6943 strings out of 495354
+ 98283 string characters out of 3183074
+ 188165 words of memory out of 3000000
  9971 multiletter control sequences out of 15000+200000
  12637 words of font info for 49 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -482,9 +475,9 @@ msfonts/cm/cmr7.pfb><D:/Program Files/CTEX/MiKTeX/fonts/type1/public/amsfonts/c
 m/cmsy10.pfb><D:/Program Files/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7
 .pfb><D:/Program Files/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><D
 :/Program Files/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on progress_report.pdf (8 pages, 246408 bytes).
+Output written on progress_report.pdf (8 pages, 246722 bytes).
 PDF statistics:
- 166 PDF objects out of 1000 (max. 8388607)
- 28 named destinations out of 1000 (max. 500000)
+ 168 PDF objects out of 1000 (max. 8388607)
+ 29 named destinations out of 1000 (max. 500000)
  96 words of extra memory for PDF output out of 10000 (max. 10000000)
 

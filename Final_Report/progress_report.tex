@@ -101,7 +101,7 @@
     \begin{center}
         \includegraphics[width = 0.5\textwidth]{Fluppy.png}
     \end{center}
-    
+
     Although we can observe the improvement through time, the agent learns very slow. This may because the (extrinsic) reward is given only when the bird has successfully passed through a door. At many times, although the bird has reached the height that can pass the door or very close to the door, it crashes into the wall due to some small disturb. Then the agent cannot distinguish this case with the totally bad policy like always flying upward because it does not receive any additional reward for getting more closer to the door. If we use the h-DQN method, we can set a goal in the door and give intrinsic to the controller for getting closer to this goal. Then this may speed up the training process. But since the scene is changing and moving forward, we cannot fix a location or a specific image as the goal for controller. Even reading the current height of the bird requires a new neural network and additional training, and requires specific human knowledge of the rules of this flappy bird game.
 
     \section{Our Result}
@@ -117,7 +117,7 @@
                 x_i = 0.5x_{i-1} + 0.5x_{i+1}, (2\leq i \leq 5)
             \end{equation}
             Solving the equations and we can get $x_2 = \frac{1}{5}$.
-    
+
             Notice that if we adopt $\epsilon -$greedy policy, equation (1) will become
             \begin{equation}
                 x_i = \frac{1 + \epsilon}{2}x_{i-1} + \frac{1 - \epsilon}{2}x_{i+1}, (2\leq i \leq 5)
@@ -147,9 +147,9 @@
     \includegraphics[width=90mm]{1.png}
 
     We can see the yellow line raises abruptly when the process is 60\% done. Maybe this is because the parameter should be adjusted, or there are some other reasons.
-    
+
     For more details, see \href{https://github.com/faebdc/AI-Project}{our codes}, there is README on the web site.
- 
+
     \subsection{Second Experiment}
     To make our idea more general, we design a new 2-dimension continuous game setting as following: The map size is 20 by 20; The start state is at $(2, 2)$, the terminate state is at (0, 0); The action set is $\{0(up), 1(down), 2(left), 3(right)\}$. Choose each action will result in moving to the corresponding direction for a random distance in the interval $[0.8, 1.2]$ (if hitting the wall, the agent will stop at the wall). The reward R is given at the terminal state. Let 'key' be at $(15, 15)$.
     $$R = \begin{cases}
@@ -161,14 +161,14 @@
     Our implementation works as following: The controller (the lower hierarchy) will be given a subgoal state $g$. Suppose at time t, the goal is set at $g_t$, the intrinsic reward for the controller will be $r(s_t, g_t, a_t, s_{t+1}) = -||g_t - s_{t+1}||_2$. To learn which action to make, we use Q-Learning with Linear Approxiamators \cite{lecture}. The meta-controller (the higher hierarchy) learns how to choose a goal for the controller based on current state and whether the key has been fetched. Here we add an additional state to indicate whether the key has been fetched because the meta-controller should be able to distinguish this state by using cameras and images. This skill will require training deep neural network for image classification, but we do not concern about the problem here. The meta-controller use traditional Q-Learning. But we will restrict its action zone to be within a range of $(5, 5)$, i.e., it will set a goal $g_t' = (i, j), -2\leq i\leq 2, -2\leq j\leq 2, i, j\in Z$ when a new goal is required. So the goal will be the $g_t = s_t + g_t'$. We use this new goal setting method instead of setting the furthest state because in reality, the agent can only observe the environment within a range.
 
     To test the function of linear approximator of controller, we first set the goal to key position. After the key state is reached, we set the key to the terminal state. The agent learns to achieve an average reward of near 100 just after about 100 iterations. This proves the h-DQN's ability on encouraging the agent to search the given goal state much more efficiently than random walk in $\epsilon-$greedy method.
-    
+
     Then we use the Q-learning method we mentioned before for controller to test if it can figure out the key position. However, the agent failed to learn the optimal policy in 9999 iterations. The possible reason may be the iteration number is not large enough.
 
     For more details, see \href{https://github.com/faebdc/AI-Project}{our codes}, there is README on the web site.
 
     \section{Conclusion and Further Research}
     In this project, we successfully test the h-DQN's ability on encouraging the agent to search far states. This propoerty is very useful when the rewards are sparce and requires efficient searching to find.
-    
+
     However, the ability of h-DQN method is still limited in the sense of generalization and requires specifically design for specific game settings. The distance of two states, although easy to figure out in some game settings, are not always easy to calculate in the real world problems. So maybe we should train a neural network to give intrinsic reward based on current state and goal to generalize the method in order to help in all problems DQN can solve.
 
     But converging speed is another big burden of h-DQN, as we find in reimplement of \cite{AI-16}'s work. The unaccuracy of the lower hierarchy experience make it more hard to train the higher hierarchy. This problem will be more critical if we add more flexibility for giving intrinsic reward. The solution may need to find a balance between efficiency and generalization power.

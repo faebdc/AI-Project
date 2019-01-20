@@ -12,6 +12,11 @@ h-dqn.
   Integrating Temporal Abstraction and Intrinsic Motivation" by Kulkarni et al.
   (2016) in Python.
 
+\bibitem{lecture}
+Q-learning with linear approximators.
+\newblock Lecture 8: Reinforcement Learning II, page 23; Given by Chongjie
+  Zhang.
+
 \bibitem{AI-16}
 Tejas~D. Kulkarni, Karthik Narasimhan, Ardavan Saeedi, and Josh Tenenbaum.
 \newblock Hierarchical deep reinforcement learning: Integrating temporal
