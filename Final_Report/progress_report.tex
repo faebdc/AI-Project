@@ -146,7 +146,7 @@
 
     \includegraphics[width=90mm]{1.png}
 
-    We can see the yellow line raises abruptly when the process is 60\% done. Maybe this is because the parameter should be adjusted, or there are some other reasons.
+    We can see the yellow line raises abruptly when the process is 60\% done. This is because the controller learned the best policy at this time point.
 
     For more details, see \href{https://github.com/faebdc/AI-Project}{our codes}, there is README on the web site.
 
@@ -158,18 +158,18 @@
     \end{cases}$$
     In this continuous setting, we define a location $L = (x_0, y_0)$ has been visited if the agent has visited a point $P = (x, y)$ such that $||P - L||_2 < 1$.
 
-    Our implementation works as following: The controller (the lower hierarchy) will be given a subgoal state $g$. Suppose at time t, the goal is set at $g_t$, the intrinsic reward for the controller will be $r(s_t, g_t, a_t, s_{t+1}) = -||g_t - s_{t+1}||_2$. To learn which action to make, we use Q-Learning with Linear Approxiamators \cite{lecture}. The meta-controller (the higher hierarchy) learns how to choose a goal for the controller based on current state and whether the key has been fetched. Here we add an additional state to indicate whether the key has been fetched because the meta-controller should be able to distinguish this state by using cameras and images. This skill will require training deep neural network for image classification, but we do not concern about the problem here. The meta-controller use traditional Q-Learning. But we will restrict its action zone to be within a range of $(5, 5)$, i.e., it will set a goal $g_t' = (i, j), -2\leq i\leq 2, -2\leq j\leq 2, i, j\in Z$ when a new goal is required. So the goal will be the $g_t = s_t + g_t'$. We use this new goal setting method instead of setting the furthest state because in reality, the agent can only observe the environment within a range.
+    Our implementation works as following: The controller (the lower hierarchy) will be given a subgoal state $g$. Suppose at time t, the goal is set at $g_t$, the intrinsic reward for the controller will be $r(s_t, g_t, a_t, s_{t+1}) = -||g_t - s_{t+1}||_2$. To learn which action to make, we use Q-Learning with Linear Approxiamators \cite{lecture}. The meta-controller (the higher hierarchy) learns how to choose a goal for the controller based on current state and whether the key has been fetched. Here we add an additional state to indicate whether the key has been fetched because the meta-controller should be able to distinguish this state by using cameras and images. This skill will require training deep neural network for image classification, but we do not concern about the problem here. The meta-controller use traditional Q-Learning. But we will restrict its action zone to be within a range of $(9, 9)$, i.e., it will set a goal $g_t' = (i, j), -4\leq i\leq 4, -4\leq j\leq 4, i, j\in Z$ when a new goal is required. So the goal will be the $g_t = s_t + g_t'$. We use this new goal setting method instead of setting the furthest state because in reality, the agent can only observe the environment within a range.
 
-    To test the function of linear approximator of controller, we first set the goal to key position. After the key state is reached, we set the key to the terminal state. The agent learns to achieve an average reward of near 100 just after about 100 iterations. This proves the h-DQN's ability on encouraging the agent to search the given goal state much more efficiently than random walk in $\epsilon-$greedy method.
+%    To test the function of linear approximator of controller, we first set the goal to key position. After the key state is reached, we set the key to the terminal state. The agent learns to achieve an average reward of near 100 just after about 100 iterations. This proves the h-DQN's ability on encouraging the agent to search the given goal state much more efficiently than random walk in $\epsilon-$greedy method.
 
-    Then we use the Q-learning method we mentioned before for controller to test if it can figure out the key position. However, the agent failed to learn the optimal policy in 9999 iterations. The possible reason may be the iteration number is not large enough.
+%    Then we use the Q-learning method we mentioned before for controller to test if it can figure out the key position. However, the agent failed to learn the optimal policy in 9999 iterations. The possible reason may be the iteration number is not large enough.
 
     For more details, see \href{https://github.com/faebdc/AI-Project}{our codes}, there is README on the web site.
 
     \section{Conclusion and Further Research}
-    In this project, we successfully test the h-DQN's ability on encouraging the agent to search far states. This propoerty is very useful when the rewards are sparce and requires efficient searching to find.
+    In this project, we successfully test the h-DQN's ability on encouraging the agent to search far states. This property is very useful when the rewards are sparse and requires efficient searching to find.
 
-    However, the ability of h-DQN method is still limited in the sense of generalization and requires specifically design for specific game settings. The distance of two states, although easy to figure out in some game settings, are not always easy to calculate in the real world problems. So maybe we should train a neural network to give intrinsic reward based on current state and goal to generalize the method in order to help in all problems DQN can solve.
+%    However, the ability of h-DQN method is still limited in the sense of generalization and requires specifically design for specific game settings. The distance of two states, although easy to figure out in some game settings, are not always easy to calculate in the real world problems. So maybe we should train a neural network to give intrinsic reward based on current state and goal to generalize the method in order to help in all problems DQN can solve.
 
     But converging speed is another big burden of h-DQN, as we find in reimplement of \cite{AI-16}'s work. The unaccuracy of the lower hierarchy experience make it more hard to train the higher hierarchy. This problem will be more critical if we add more flexibility for giving intrinsic reward. The solution may need to find a balance between efficiency and generalization power.
     \bibliographystyle{plain}
