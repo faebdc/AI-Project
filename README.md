@@ -2,7 +2,11 @@
 
 Here is the result about "The Second Experiment".
 
-![Image text](https://raw.github.com/yourName/repositpry/master/yourprojectName/img-folder/test.jpg)
+![Image text](https://raw.githubusercontent.com/faebdc/AI-Project/master/Final_Report/result.png)
+
+The code is in folder "new_code". There are annotations in the code
+
+Following information are other detail things.
 
 # AI-Project
 
