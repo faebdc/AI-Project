@@ -1,0 +1,10 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: progress_report.aux
+The style file: plain.bst
+Database file #1: refx.bib
+A bad cross reference---entry "AI-16"
+refers to entry "DBLP:conf/nips/2016", which doesn't exist
+Warning--I didn't find a database entry for "lecture"
+Warning--I didn't find a database entry for "DBLP:conf/nips/2016"
+Warning--to sort, need author or key in github
+Warning--to sort, need author or key in github2
+(There was 1 error message)
